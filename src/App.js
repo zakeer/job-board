@@ -24,11 +24,10 @@ function App() {
 
   return (
     <div className="App h-screen flex flex-col">
-      <h1>Total JOBS: {jobs.length}</h1>
       <FilterJobTitles />
-      <div className="flex flex-1 border-l">
+      <div className="flex flex-1 border-l pt-16">
         <JobListContainer jobs={jobs} />
-        <JobDetails />
+        <JobDetails jobs={jobs}/>
       </div>
     </div>
   );
