@@ -15,8 +15,17 @@ function App() {
     // getAllJobs().then(jobs => setJobs(jobs))
     const jobs = await getAllJobs();
     setJobs(jobs);
-    console.log(extractCategoriesFromJobs(jobs));
+    console.log(extractCategoriesFromJobs(jobs).filter( (item,index,value) => value.indexOf(item) ===index ));
   }
+
+  // const findDuplicates = (arr) => {
+  //   return arr.filter((item, index) => arr.indexOf(item) !== index);
+  // };
+  
+  // const sentence = ['apple', 'apple', 'banana', 'cat', 'cat', 'dog'];
+  // const duplicates = findDuplicates(sentence);
+  
+  // console.log('Duplicate items:', duplicates);
 
   useEffect(() => {
     fetchJobs();

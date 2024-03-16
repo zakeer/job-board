@@ -1,5 +1,5 @@
 import React from 'react'
-import Logos from './Logos';
+// import Logos from './Logos';
 import JobDetailsCard from './JobDetailsCard';
 
 const JobDetails = ({jobs = []}) => {
@@ -15,7 +15,7 @@ const JobDetails = ({jobs = []}) => {
                 React Native Developer
             </header>
             <JobDetailsCard />
-            <Logos />
+              {/* <Logos /> */}
         </div>
 
     );
