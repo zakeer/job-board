@@ -49,4 +49,5 @@ export function extractCategoriesFromJobs(jobs = []) {
         const titles = curr.categories.map(({ name }) => name)
         return [...prev, ...titles].filter((dup,idx,arr)=> arr.indexOf(dup) === idx);
     }, [])
+    
 }

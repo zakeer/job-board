@@ -1,6 +1,6 @@
 import React from 'react';
 import Briefcase2LineIcon from 'remixicon-react/Briefcase2LineIcon'
-import BookMarkLineIcon from 'remixicon-react/BookmarkLineIcon'
+import BookMarkLineIcon from 'remixicon-react/BookMarkLineIcon'
 
 
 const imgs = [
