@@ -10,12 +10,13 @@ import { extractCategoriesFromJobs } from './utils/jobs.utils';
 function App() {
 
   const [jobs, setJobs] = useState([]);
+  const [jobTitles,setJobTitles] = useState([]);
 
   const fetchJobs = async () => {
     // getAllJobs().then(jobs => setJobs(jobs))
     const jobs = await getAllJobs();
     setJobs(jobs);
-    console.log(extractCategoriesFromJobs(jobs));
+    setJobTitles(extractCategoriesFromJobs(jobs));
   }
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <div className="App h-screen flex flex-col">
-      <FilterJobTitles />
+      <FilterJobTitles jobTitle={jobTitles}/>
       <div className="flex flex-1 h-full border-l overflow-hidden">
         <JobListContainer jobs={jobs} />
         <JobDetails jobs={jobs} />
