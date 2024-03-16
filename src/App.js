@@ -10,7 +10,8 @@ import { extractCategoriesFromJobs } from './utils/jobs.utils';
 function App() {
 
   const [jobs, setJobs] = useState([]);
-  const [jobTitles,setJobTitles] = useState([]);
+  const [jobTitles, setJobTitles] = useState([]);
+  const [selectedJob, setSelectedJob] = useState(null);
 
   const fetchJobs = async () => {
     // getAllJobs().then(jobs => setJobs(jobs))
@@ -23,14 +24,14 @@ function App() {
     fetchJobs();
   }, [])
 
-  console.log(jobs);
+  console.log(":: selectedJob ::", selectedJob);
 
   return (
     <div className="App h-screen flex flex-col">
-      <FilterJobTitles jobTitle={jobTitles}/>
+      <FilterJobTitles jobTitle={jobTitles} />
       <div className="flex flex-1 h-full border-l overflow-hidden">
-        <JobListContainer jobs={jobs} />
-        <JobDetails jobs={jobs} />
+        <JobListContainer jobs={jobs} onSelect={setSelectedJob} />
+        <JobDetails job={selectedJob} />
       </div>
     </div>
   );

@@ -1,11 +1,16 @@
 import React from 'react'
 import JobCard from './JobCard'
 
-const JobListContainer = ({ jobs = [] }) => {
+// var xyz = 20;
+// select = () => {};
+
+// <Component a={1} b={() => {}} x={xyz} click={select} />
+
+const JobListContainer = ({ jobs = [], onSelect  }) => {
 
   return (
     <aside className='flex-[3] border-r h-full overflow-y-auto'>
-      {jobs.map(job => <JobCard key={job.id} jobs={job} />)}
+      {jobs.map(job => <JobCard onJobClick={() => onSelect(job)} key={job.id} job={job} />)}
     </aside>
   )
 }
