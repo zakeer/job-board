@@ -4,7 +4,7 @@ import JobDetailsCard from './JobDetailsCard';
 
 const JobDetails = ({jobs = []}) => {
     return (
-        <div className="h-fullscreen p-8 m-2 text-Black shadow">
+        <div className="flex-[7] p-8 m-2 text-black shadow">
         <div className="flex justify-between ">
           <h1 className="font-bold text-2xl "> React Native Developer </h1>
   
@@ -37,40 +37,15 @@ const JobDetails = ({jobs = []}) => {
           </p>
         </div>
   
-        <hr className="py-4" />
+       <div className='border-t border-b py-4'>
   
         <button className="bg-blue-400 text-white rounded-lg p-2">
           Apply LinkedIn
         </button>
   
-        <hr className="my-7" />
-  
-        <div className=" py-4">
-          <p className="py-4"> Experience: 0 to 1 year</p>
-          <p className="py-4">Job Description </p>
-  
-          <p className="py-4">
-            We are seeking a skilled React Native Developer to join our dynamic
-            team. The ideal candidate should have a strong background in mobile
-            application development using React Native framework. The candidate
-            will be responsible for developing, testing and deploying mobile
-            applications for both IOS and Anroid Platforms
-          </p>
-  
-          <ul>
-            Resposibilities
-            <li>
-              Design and develop high-quality mobile applications using React
-              Native framework
-            </li>
-            <li>
-              Collbrate with cross-functional teams of define, design and ship new
-              features
-            </li>
-            <li>Optimize applications for maximum perfomance and Scalability </li>
-            <li></li>
-          </ul>
         </div>
+  
+        
       </div>
     );
 }
