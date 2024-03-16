@@ -12,7 +12,7 @@ function FilterJobTitles() {
     'Intern',
   ];
   return (
-    <header className="flex bg-white p-3 gap-2 shadow-xl fixed top-0 z-10 w-full">
+    <header className="flex bg-white p-3 gap-2 shadow-xl sticky top-0 z-10">
       {roles.map((role) => (
         <button key={role} className="p-2 border rounded-full px-4 hover:bg-slate-100 hover:shadow">
           {role}

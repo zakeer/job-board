@@ -5,6 +5,7 @@ import JobListContainer from './components/JobListContainer';
 import JobDetails from './components/JobDetails';
 import { getAllJobs } from './services/job.services';
 import { useEffect, useState } from 'react';
+import { extractCategoriesFromJobs } from './utils/jobs.utils';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     // getAllJobs().then(jobs => setJobs(jobs))
     const jobs = await getAllJobs();
     setJobs(jobs);
+    console.log(extractCategoriesFromJobs(jobs));
   }
 
   useEffect(() => {
@@ -25,9 +27,9 @@ function App() {
   return (
     <div className="App h-screen flex flex-col">
       <FilterJobTitles />
-      <div className="flex flex-1 border-l pt-16">
+      <div className="flex flex-1 h-full border-l overflow-hidden">
         <JobListContainer jobs={jobs} />
-        <JobDetails jobs={jobs}/>
+        <JobDetails jobs={jobs} />
       </div>
     </div>
   );

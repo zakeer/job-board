@@ -4,7 +4,7 @@ import JobDetailsCard from './JobDetailsCard';
 
 const JobDetails = ({jobs = []}) => {
     return (
-        <div className='bg-green-300 flex-[7] overflow-y-auto h-screen'>
+        <div className='bg-green-300 flex-[7]'>
             <h1>React Native Developer</h1>
              
              <img src=""/>
