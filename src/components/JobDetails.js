@@ -2,9 +2,9 @@ import React from 'react'
 import Logos from './Logos';
 import JobDetailsCard from './JobDetailsCard';
 
-const JobDetails = () => {
+const JobDetails = ({jobs = []}) => {
     return (
-        <div className='bg-green-300 flex-[7]'>
+        <div className='bg-green-300 flex-[7] overflow-y-auto h-screen'>
             <h1>React Native Developer</h1>
              
              <img src=""/>
