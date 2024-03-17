@@ -1,12 +1,10 @@
-import React from 'react'
-// import Logos from './Logos';
-import JobDetailsCard from './JobDetailsCard';
+import ReactHtmlParser from 'react-html-parser';
 
-const JobDetails = ({ job }) => {
+const JobDetails = ({ job = {}, jobsList }) => {
   return (
-    <div className="flex-[7] p-8 m-2 text-black shadow">
+    <div className="flex-[7] p-8 m-2 text-black shadow overflow-auto">
       <div className="flex justify-between ">
-        <h1 className="font-bold text-2xl "> React Native Developer </h1>
+        <h1 className="font-bold text-2xl "> {job == undefined ? jobsList[0]?.name : job?.name} </h1>
 
         <div className="flex text-slate-500 ">
           <img
@@ -33,20 +31,19 @@ const JobDetails = ({ job }) => {
           id="ember30"
         />
         <p className="py-1 text-slate-500">
-          Qloron PVT Ltd <br /> Hyderabad,Telangna
+          {job == undefined ? jobsList[0]?.company.name : job?.company.name} <br /> {job == undefined ? jobsList[0]?.locations[0].name : job?.locations[0]?.name}
         </p>
       </div>
 
       <div className='border-t border-b py-4'>
-
         <button className="bg-blue-400 text-white rounded-lg p-2">
-          Apply LinkedIn
+          <a href={job == undefined ? jobsList[0].refs.landing_page : job?.refs.landing_page} target='_blank'>Apply LinkedIn</a>
         </button>
 
       </div>
 
       <div>
-        {job?.contents}
+        {ReactHtmlParser(job == undefined ? jobsList[0]?.contents : job?.contents)}
       </div>
 
 
@@ -55,3 +52,5 @@ const JobDetails = ({ job }) => {
 }
 
 export default JobDetails;
+
+
