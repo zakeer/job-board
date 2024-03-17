@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 // import Logos from './Logos';
-import JobDetailsCard from './JobDetailsCard';
+import ReactHtmlParser from 'react-html-parser';
+import { JobContext } from '../App';
 
-const JobDetails = ({ job }) => {
+const JobDetails = () => {
+
+  const { selectedJob } = useContext(JobContext)
+  console.log("Job Details Selected Job ::", selectedJob)
+
   return (
-    <div className="flex-[7] p-8 m-2 text-black shadow">
+    <div className="flex-[7] p-8 m-2 text-black shadow overflow-y-auto">
       <div className="flex justify-between ">
-        <h1 className="font-bold text-2xl "> React Native Developer </h1>
+        <h1 className="font-bold text-2xl ">{selectedJob?.name}</h1>
 
         <div className="flex text-slate-500 ">
           <img
@@ -32,8 +37,8 @@ const JobDetails = ({ job }) => {
           alt="Qloron Pvt Ltd logo"
           id="ember30"
         />
-        <p className="py-1 text-slate-500">
-          Qloron PVT Ltd <br /> Hyderabad,Telangna
+        <p className="flex flex-col text-slate-500">
+          {selectedJob?.company?.name} {selectedJob?.locations.map(({ name }) => <span key={name}>{name}</span>)}
         </p>
       </div>
 
@@ -42,14 +47,12 @@ const JobDetails = ({ job }) => {
         <button className="bg-blue-400 text-white rounded-lg p-2">
           Apply LinkedIn
         </button>
-
       </div>
 
       <div>
-        {job?.contents}
+        {ReactHtmlParser(selectedJob?.contents)}
+
       </div>
-
-
     </div>
   );
 }
