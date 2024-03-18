@@ -13,7 +13,6 @@ function App() {
   const [selectedJob, setSelectedJob] = useState(null);
 
   const fetchJobs = async () => {
-    // getAllJobs().then(jobs => setJobs(jobs))
     const jobs = await getAllJobs();
     setJobs(jobs);
     setJobTitles(extractCategoriesFromJobs(jobs));
@@ -22,8 +21,6 @@ function App() {
   useEffect(() => {
     fetchJobs();
   }, [])
-
-  console.log(":: selectedJob ::", selectedJob);
 
   return (
     <div className="App h-screen flex flex-col">
