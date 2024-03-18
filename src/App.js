@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import FilterJobTitles from './components/FilterJobTitles';
 import JobListContainer from './components/JobListContainer';
