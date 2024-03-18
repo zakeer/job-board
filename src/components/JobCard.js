@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import Briefcase2LineIcon from 'remixicon-react/Briefcase2LineIcon'
 import BookMarkLineIcon from 'remixicon-react/BookMarkLineIcon'
 
