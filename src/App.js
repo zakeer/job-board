@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react';
 import { extractCategoriesFromJobs } from './utils/jobs.utils';
 
 function App() {
-
   const [jobs, setJobs] = useState([]);
   const [jobTitles, setJobTitles] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
