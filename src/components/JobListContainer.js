@@ -6,11 +6,15 @@ import JobCard from './JobCard'
 
 // <Component a={1} b={() => {}} x={xyz} click={select} />
 
-const JobListContainer = ({ jobs = [], onSelect  }) => {
+const JobListContainer = ({ jobs = [], onSelect, title}) => {
+console .log("Sarf output ",title)
 
+const filteredJobs = title ? jobs.filter(job => 
+                     job.categories.some(category => category.name === title)) : jobs;
   return (
     <aside className='flex-[3] border-r h-full overflow-y-auto'>
-      {jobs.map(job => <JobCard onJobClick={() => onSelect(job)} key={job.id} job={job} />)}
+      {filteredJobs.map(job => 
+      <JobCard  onJobClick={() => onSelect(job)} key={job.id} job={job} />)}
     </aside>
   )
 }

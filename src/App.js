@@ -11,6 +11,7 @@ function App() {
   const [jobs, setJobs] = useState([]);
   const [jobTitles, setJobTitles] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
+  const [selectedJobTitle, setSelectedJobTitle] = useState(null);
 
   const fetchJobs = async () => {
     // getAllJobs().then(jobs => setJobs(jobs))
@@ -22,14 +23,13 @@ function App() {
   useEffect(() => {
     fetchJobs();
   }, [])
-
-  console.log(":: selectedJob ::", selectedJob);
-
+  console.log("Sarf- ", jobTitles)
   return (
     <div className="App h-screen flex flex-col">
-      <FilterJobTitles jobTitle={jobTitles} />
+      <FilterJobTitles jobTitle={jobTitles} onTitleSelect={setSelectedJobTitle} />
+      
       <div className="flex flex-1 h-full border-l overflow-hidden">
-        <JobListContainer jobs={jobs} onSelect={setSelectedJob} />
+        <JobListContainer jobs={jobs} onSelect={setSelectedJob} title={selectedJobTitle} jobTitle={jobTitles}/>
         <JobDetails job={selectedJob} />
       </div>
     </div>
