@@ -1,20 +1,13 @@
 import React from 'react'
 import JobCard from './JobCard'
 
-// var xyz = 20;
-// select = () => {};
 
-// <Component a={1} b={() => {}} x={xyz} click={select} />
+const JobListContainer = ({ jobs = [], onSelect }) => {
 
-const JobListContainer = ({ jobs = [], onSelect, title}) => {
-console .log("Sarf output ",title)
-
-const filteredJobs = title ? jobs.filter(job => 
-                     job.categories.some(category => category.name === title)) : jobs;
   return (
     <aside className='flex-[3] border-r h-full overflow-y-auto'>
-      {filteredJobs.map(job => 
-      <JobCard  onJobClick={() => onSelect(job)} key={job.id} job={job} />)}
+      {jobs.map(job =>
+        <JobCard onJobClick={() => onSelect(job)} key={job.id} job={job} />)}
     </aside>
   )
 }
