@@ -1,6 +1,7 @@
 import React from 'react'
 
 const JobDetails = ({ job }) => {
+  console.log(":: JobDetails.js ::");
   const htmlContent = job?.contents
 
   if (!job) {
