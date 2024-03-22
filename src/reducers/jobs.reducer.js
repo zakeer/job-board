@@ -1,12 +1,13 @@
 import { extractCategoriesFromJobs } from "../utils/jobs.utils";
 
+
 export const INITIAL_STATE = {
     loading: true,
     jobs: [],
     selectedJob: null,
     seletedCategory: 'ALL',
     categories: [],
-    filteredJobs: []
+    filteredJobs: [],
 }
 
 export const ACTION = {
@@ -14,6 +15,7 @@ export const ACTION = {
     FETCH_JOBS_SUCCESS: 'FETCH_JOBS_SUCCESS',
     SELECTED_JOB: 'SELECTED_JOB',
     SELECTED_CATEGORY: 'SELECTED_CATEGORY',
+    SEARCH_CATEGORY: 'SEARCH_CATEGORY'
 }
 
 
@@ -57,7 +59,6 @@ export function jobReducer(state = INITIAL_STATE, action) {
             selectedJob: filterJobs[0]
         }
     }
-
 
     return { ...state };
 }
