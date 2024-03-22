@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="App h-screen flex flex-col">
-      <FilterJobTitles jobTitle={categories} dispatch={dispatch} />
+      <FilterJobTitles jobTitle={categories} dispatch={dispatch} seletedCategory={seletedCategory}/>
 
       <div className="flex flex-1 h-full border-l overflow-hidden">
         <JobListContainer
